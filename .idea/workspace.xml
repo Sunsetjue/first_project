@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="976b332c-70dc-4947-be06-0741fe359e78" name="Default Changelist" comment="" />
+    <list default="true" id="976b332c-70dc-4947-be06-0741fe359e78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/supervisor.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +48,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="conf" value="1" />
           <entry key="css" value="15" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="134" />
           <entry key="jpg" value="5" />
           <entry key="js" value="106" />
           <entry key="json" value="6" />
-          <entry key="py" value="189" />
+          <entry key="py" value="191" />
           <entry key="pyi" value="1" />
           <entry key="scss" value="87" />
         </counts>
@@ -62,21 +67,22 @@
           <entry key="Image" value="5" />
           <entry key="JSON" value="6" />
           <entry key="JavaScript" value="106" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="189" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="191" />
           <entry key="PythonStub" value="1" />
           <entry key="SCSS" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="conf" value="71" />
           <entry key="css" value="75" />
           <entry key="dummy" value="3" />
           <entry key="gitignore" value="32" />
           <entry key="html" value="19530" />
           <entry key="js" value="24509" />
           <entry key="json" value="12" />
-          <entry key="py" value="20392" />
+          <entry key="py" value="20393" />
           <entry key="py@DjangoProject" value="39" />
           <entry key="scss" value="15390" />
         </counts>
@@ -88,8 +94,8 @@
           <entry key="HTML" value="19530" />
           <entry key="JSON" value="12" />
           <entry key="JavaScript" value="24509" />
-          <entry key="PLAIN_TEXT" value="36" />
-          <entry key="Python" value="20392" />
+          <entry key="PLAIN_TEXT" value="107" />
+          <entry key="Python" value="20393" />
           <entry key="SCSS" value="15390" />
         </counts>
       </usages-collector>
@@ -101,9 +107,27 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DjangoProject/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="181" column="69" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/supervisor.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5500">
+            <state relative-caret-position="22">
               <caret line="270" column="95" selection-start-line="270" selection-start-column="95" selection-end-line="270" selection-end-column="95" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
@@ -132,17 +156,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/src/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1738">
+            <state relative-caret-position="237">
               <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/templates/cms/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2992">
-              <caret line="136" column="22" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -165,15 +180,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DjangoProject/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="172" column="50" lean-forward="true" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/project/decorators.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -183,27 +189,6 @@
                 <element signature="e#0#37#0" expanded="true" />
                 <marker date="1550138180130" expanded="true" signature="555:560" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/templates/cms/add_staff.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-              <folding>
-                <element signature="e#1008#1033#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/templates/cms/staff.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -234,7 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/front/src/css/comment/header.scss" />
         <option value="$PROJECT_DIR$/front/src/js/myalert.js" />
         <option value="$PROJECT_DIR$/front/src/js/new_category.js" />
         <option value="$PROJECT_DIR$/front/templates/cms/news_category.html" />
@@ -285,6 +269,7 @@
         <option value="$PROJECT_DIR$/front/templates/front_base.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/DjangoProject/settings.py" />
+        <option value="$PROJECT_DIR$/supervisor.conf" />
       </list>
     </option>
   </component>
@@ -517,23 +502,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front/templates/cms/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/templatetags/filter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/news/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/js/carousel_map.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -576,6 +544,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1215">
           <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+          <folding>
+            <marker date="1549968943993" expanded="true" signature="1632:1637" ph="..." />
+            <marker date="1549968943993" expanded="true" signature="1782:1787" ph="..." />
+            <marker date="1549968943993" expanded="true" signature="1960:1965" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,6 +704,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#88#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -783,6 +759,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <marker date="1550033982434" expanded="true" signature="90:95" ph="..." />
+            <marker date="1550033982434" expanded="true" signature="160:165" ph="..." />
+            <marker date="1550033982434" expanded="true" signature="627:632" ph="..." />
+            <marker date="1550033982434" expanded="true" signature="706:711" ph="..." />
+            <marker date="1550033982434" expanded="true" signature="874:879" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -793,21 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5500">
-          <caret line="270" column="95" selection-start-line="270" selection-start-column="95" selection-end-line="270" selection-end-column="95" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-            <marker date="1550142780051" expanded="true" signature="1138:1143" ph="..." />
-            <marker date="1550142780051" expanded="true" signature="1300:4052" ph="..." />
-            <marker date="1550142780051" expanded="true" signature="6181:6294" ph="..." />
-            <marker date="1550142780051" expanded="true" signature="11555:11560" ph="..." />
-            <marker date="1550142780051" expanded="true" signature="11778:11783" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/cms/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -815,20 +783,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1738">
-          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/cms/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2992">
-          <caret line="136" column="22" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -863,13 +817,6 @@
     <entry file="file://$PROJECT_DIR$/front/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/templates/front_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -877,10 +824,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/cms/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="270" column="95" selection-start-line="270" selection-start-column="95" selection-end-line="270" selection-end-column="95" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+            <marker date="1550142780051" expanded="true" signature="1138:1143" ph="..." />
+            <marker date="1550142780051" expanded="true" signature="1300:4052" ph="..." />
+            <marker date="1550142780051" expanded="true" signature="6181:6294" ph="..." />
+            <marker date="1550142780051" expanded="true" signature="11555:11560" ph="..." />
+            <marker date="1550142780051" expanded="true" signature="11778:11783" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/front_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/templates/cms/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="136" column="22" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DjangoProject/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/ueditor/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-528" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DjangoProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="172" column="50" lean-forward="true" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="50" />
+        <state relative-caret-position="437">
+          <caret line="181" column="69" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supervisor.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
         </state>
       </provider>
     </entry>
