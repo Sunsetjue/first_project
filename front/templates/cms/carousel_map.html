@@ -1,0 +1,84 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}
+    轮播图管理
+{% endblock %}
+
+{% block head %}
+    <script src="{% static 'art-template/template-web.js' %}"></script>
+    <script src="{% static 'js/carousel_map.min.js' %}"></script>
+    <script id="carousel-list-group" type="text/html">
+        {% verbatim %}
+        <div class="col-md-10">
+            {{ if banner }}
+            <div class="box box-primary carousel-list-group" data-carousel-id="{{ banner.id }}">
+            {{ else }}
+            <div class="box box-primary carousel-list-group">
+            {{ /if }}
+                <div class="box-header with-border">
+                    {{ if banner }}
+                        <h3 class="box-title banner-id">摆放位置：{{ banner.position }}</h3>
+                    {{ else }}
+                        <h3 class="box-title banner-id">摆放位置：5</h3>
+                    {{ /if }}
+                    <button class="btn btn-default btn-xs pull-right close-carousel-btn">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <div class="box-body">
+                    <div class="thumbnail-group" style="width: 180px; float: left; margin-bottom: 5px">
+                        <input type="file" style="display: none" class="add_file_input">
+                        {{ if banner }}
+                            <img src="{{ banner.image_url }}" alt="" style="width: 100%" class="add_input_file">
+                        {{ else }}
+                            <img src="/static/images/banner_meitu_1.jpg" alt="" style="width: 100%" class="add_input_file">
+                        {{ /if }}
+                    </div>
+                    <div class="more-group" style="float: left;margin-left: 40px; margin-top: 12px; width: 500px">
+                        <div class="form-group">
+                            {{ if banner }}
+                                <input type="number" class="form-control" name="position" value="{{ banner.position }}" placeholder="请输入轮播图位置（最大是5）">
+                            {{ else }}
+                                <input type="number" class="form-control" name="position" placeholder="请输入轮播图位置（最大是5）">
+                            {{ /if }}
+                        </div>
+                        <div class="form-group">
+                            {{ if banner }}
+                                <input type="text" class="form-control" name="link_to" value="{{ banner.link_to }}" placeholder="请输入跳转链接">
+                            {{ else }}
+                                <input type="text" class="form-control" name="link_to" placeholder="请输入跳转链接">
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary pull-right save-btn">提交</button>
+                </div>
+            </div>
+        </div>
+        {% endverbatim %}
+    </script>
+{% endblock %}
+
+{% block content-header %}
+    <h1>轮播图管理</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="btn-group" style="float: left">
+                <button class="btn btn-primary" id="add_carousel_btn">
+                    <i class="fa fa-plus"></i>
+                    添加轮播图
+                </button>
+            </div>
+            <ul class="tips" style="float: left">
+                <li>支持JPG，GIF，PNG格式，最多可以上传6张</li>
+                <li>摆放位置越小越靠前 轮播图最多只有5张 选择位置越大越靠后</li>
+            </ul>
+        </div>
+        <div class="carousel-group">
+        </div>
+    </div>
+{% endblock %}

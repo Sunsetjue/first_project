@@ -1,0 +1,22 @@
+{% load filter %}
+<ul class="news_list">
+    {% for news in newses %}
+        <li>
+            <div class="list_group">
+                <div class="list_group_left">
+                    <div class="img_border">
+                        {{ news.category.name }}
+                    </div>
+                    <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><img src="{{ news.thumbnail }}" alt=""></a>
+                </div>
+                <div class="list_group_right">
+                    <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><p class="list_header">{{ news.title }}</p></a>
+                    <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><p class="list_detail">{{ news.describe }}</p></a>
+                    <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><span class="news_direction">{{ news.category.name }}</span></a>
+                    <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><span class="author">{{ news.author.username }}</span></a>
+                    <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><span class="timer">{{ news.timer|since_time }}</span></a>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

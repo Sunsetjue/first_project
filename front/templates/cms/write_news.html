@@ -1,0 +1,103 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}
+    {% if news %}
+        新闻编辑
+    {% else %}
+        新闻发布
+    {% endif %}
+{% endblock %}
+
+{% block head %}
+    <script src="{% static 'js/write_news.min.js' %}"></script>
+    <script src="https://unpkg.com/qiniu-js@2.5.2/dist/qiniu.min.js"></script>
+    <script src="{% static 'ueditor/ueditor.config.js' %}"></script>
+    <script src="{% static 'ueditor/ueditor.all.min.js' %}"></script>
+{% endblock %}
+
+{% block content-header %}
+    {% if news %}
+        <h1>新闻编辑</h1>
+    {% else %}
+        <h1>新闻发布</h1>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <form action="" role="form">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="title-form">新闻标题</label>
+                            {% if news %}
+                                <input type="text" class="form-control" id="title-form" placeholder="请输入新闻标题" name="title" value="{{ news.title }}">
+                            {% else %}
+                                <input type="text" class="form-control" id="title-form" placeholder="请输入新闻标题" name="title">
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="category-form">新闻分类</label>
+                            <select name="category" id="category-form" class="form-control">
+                                {% for category in categories %}
+                                    {% if news and news.category_id == category.id %}
+                                        <option value="{{ category.id }}" selected>{{ category.name }}</option>
+                                    {% else %}
+                                        <option value="{{ category.id }}">{{ category.name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="describe-form">简略描述</label>
+                            {% if news %}
+                                <input type="text" class="form-control" id="describe-form" placeholder="新闻的简要描述"
+                                   name="describe" value="{{ news.describe }}">
+                            {% else %}
+                                <input type="text" class="form-control" id="describe-form" placeholder="新闻的简要描述"
+                                   name="describe">
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="thumbnail-form">缩略图</label>
+                            <div class="input-group">
+                                {% if news %}
+                                    <input type="text" class="form-control" id="thumbnail-form" name="thumbnail"
+                                       placeholder="上传图片的链接" value="{{ news.thumbnail }}">
+                                {% else %}
+                                    <input type="text" class="form-control" id="thumbnail-form" name="thumbnail"
+                                       placeholder="上传图片的链接">
+                                {% endif %}
+                                <span class="input-group-btn">
+                                    <label class="btn btn-default btn-file">
+                                        上传图片
+                                        <input hidden type="file" class="btn btn-default" id="upload-img">
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display: none" id="process-upload">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editor">新闻内容</label>
+                            {% if news %}
+                                <script id="editor" type="text/plain" name="content">{{ news.content|safe }}</script>
+                            {% else %}
+                                <script id="editor" type="text/plain" name="content"></script>
+                            {% endif %}
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary" id="submit_news" data-news-id="{{ news.id }}">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

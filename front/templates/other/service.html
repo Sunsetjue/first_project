@@ -1,0 +1,56 @@
+{% extends 'front_base.html' %}
+
+{% block title %}
+    企业服务
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/other/service.min.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <div class="wrapper">
+            <div class="left_news">
+                <div class="banner">
+                    <img src="https://www.bufanbiz.com/static/build/images/web-bufanshop-banner.jpg" alt="">
+                </div>
+                <ul class="server-list">
+                    <li class="li1">
+                        <div class="top"></div>
+                        <div class="bottom">
+                            <p class="title">如何写好一份商业计划书</p>
+                            <p class="middle">一份好的商业计划书，是创业成功的开始！</p>
+                            <span class="under">¥8.8</span>
+                        </div>
+                    </li>
+                    <li class="li2">
+                        <div class="top"></div>
+                        <div class="bottom">
+                            <p class="title">大数据、AI与企业服务</p>
+                            <p class="middle">大数据、AI与企业服务市场的交融将带来什么新的机会？</p>
+                            <span class="under">¥9.9</span>
+                        </div>
+                    </li>
+                    <li class="li3">
+                        <div class="top"></div>
+                        <div class="bottom">
+                            <p class="title">汽车市场研究</p>
+                            <p class="middle">汽车渠道：新车渠道看好“车和家”；二手车渠道关注效率、系统性盈利能力</p>
+                            <span class="under">¥9.9</span>
+                        </div>
+                    </li>
+                    <li class="li4">
+                        <div class="top"></div>
+                        <div class="bottom">
+                            <p class="title">互联网家装市场研究</p>
+                            <p class="middle">互联网家装要“拎清”：哪些地方是“攒品”，哪些地方是“赚钱”</p>
+                            <span class="under">¥9.9</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            {% include 'comment/right_news.html' %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends 'front_base.html' %}
+
+{% block title %}
+    课程首页
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/course/course_index.min.css' %}">
+    <script src="{% static 'js/course_index.min.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <div class="course_nav">
+            <div class="nav_container">
+                <a href="#" class="title">在线课堂</a>
+                <ul class="nav_list" id="course_index_ul">
+                    <li class="activate6"><a href="#">最新课堂</a></li>
+                    <li><a href="#">系列课</a></li>
+                    <li><a href="#">投资人说</a></li>
+                    <li><a href="#">明星案例</a></li>
+                    <li><a href="#">创业知识</a></li>
+                    <li><a href="#">会员专区</a></li>
+                </ul>
+                <div class="bottom">我的课堂</div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="course_top">
+                <ul class="top_list">
+                    <li class="list_large">
+                        <a href="">
+                            <div class="holl-1">
+                                <div class="large_img-1">
+                                    <img src="https://static-image.xfz.cn/1534236783_765.png" alt="">
+                                </div>
+                                <div class="large_detail-1">
+                                    <div class="large_detail_info-1">
+                                        <div class="left-1">共9节课</div>
+                                        <div class="right-1">
+                                            <span class="yijiujiu">¥199</span>
+                                            <span>(省193元)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list_small1">
+                        <a href="">
+                            <div class="holl-2">
+                                <div class="large_img-2">
+                                    <img src="https://static-image.xfz.cn/1534234294_183.jpg-seriescourse.list" alt="">
+                                </div>
+                                <div class="large_detail-2">
+                                    <div class="large_detail_info-2">
+                                        <div class="left-2">共2节课 时长2小时</div>
+                                        <div class="right-2">
+                                            <span class="jiujiu">¥99</span>
+                                            <span>(省19元)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list_small2">
+                        <a href="">
+                            <div class="holl-2">
+                                <div class="large_img-2">
+                                    <img src="https://static-image.xfz.cn/1534129170_381.png-seriescourse.list" alt="">
+                                </div>
+                                <div class="large_detail-2">
+                                    <div class="large_detail_info-2">
+                                        <div class="left-2">共3节课 时长3小时</div>
+                                        <div class="right-2">
+                                            <span class="jiujiu">¥39</span>
+                                            <span>(省18元)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="course_middle">最新课堂</div>
+            <ul class="content">
+                {% for course in courses %}
+                    <li class="every_class">
+                    <a href="{% url 'course:detail' course_id=course.pk %}">
+                        <div class="class_holl">
+                            <div class="holl_img">
+                                <img src="{{ course.picture_url }}" alt="">
+                            </div>
+                            <div class="category">{{ course.category.name }}</div>
+                            <div class="class_detail">
+                                <div class="class_name">{{ course.title }}</div>
+                                <div class="class_author">{{ course.teacher.name }} / {{ course.teacher.name_title }}</div>
+                                {% if course.price > 0 %}
+                                    <div class="price">¥{{ course.price }}</div>
+                                {% else %}
+                                    <div class="free">免费</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+                <li class="every_class">
+                    <a href="">
+                        <div class="class_holl">
+                            <div class="holl_img">
+                                <img src="https://static-image.xfz.cn/1535354376_765.png-course.list.small" alt="">
+                            </div>
+                            <div class="category">明星案例</div>
+                            <div class="class_detail">
+                                <div class="class_name">面对公关危机，多块算快</div>
+                                <div class="class_author">高超 / 资深品牌公关</div>
+                                <div class="free">免费</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="every_class">
+                    <a href="">
+                        <div class="class_holl">
+                            <div class="holl_img">
+                                <img src="https://static-image.xfz.cn/1534237648_523.png-course.list.small" alt="">
+                            </div>
+                            <div class="category">投资人说</div>
+                            <div class="class_detail">
+                                <div class="class_name">投资人教你如何成功融资</div>
+                                <div class="class_author">乔继英 / 专业投资人 ；一线基金董事总经理</div>
+                                <div class="price">¥ 49</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="every_class">
+                    <a href="">
+                        <div class="class_holl">
+                            <div class="holl_img">
+                                <img src="https://static-image.xfz.cn/1526028597_992.png-course.list.small" alt="">
+                            </div>
+                            <div class="category">明星案例</div>
+                            <div class="class_detail">
+                                <div class="class_name">实体服务业的经营分享</div>
+                                <div class="class_author">张文龙 / 桔子运动创始人兼CEO</div>
+                                <div class="free">免费</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="every_class">
+                    <a href="">
+                        <div class="class_holl">
+                            <div class="holl_img">
+                                <img src="https://static-image.xfz.cn/1513074060_532.png-course.list.small" alt="">
+                            </div>
+                            <div class="category">明星案例</div>
+                            <div class="class_detail">
+                                <div class="class_name">文娱淘金 漫画开启新时代</div>
+                                <div class="class_author">陈安妮 / 快看漫画创始人兼CEO</div>
+                                <div class="free">免费</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

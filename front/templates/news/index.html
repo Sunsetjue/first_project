@@ -1,0 +1,76 @@
+{% extends 'front_base.html' %}
+
+{% block title %}
+    个人网站
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/news/index.min.css' %}">
+    <script src="{% static 'art-template/template-web.js' %}"></script>
+<script id="newses_list_group" type="text/html">
+    {% verbatim %}
+    {{ each newses news i }}
+                 <li>
+                     <div class="list_group">
+                         <div class="list_group_left">
+                             <div class="img_border">
+                                 {{ news.category.name }}
+                             </div>
+                             <a href="/news/{{ news.id }}/" target="_blank"><img src="{{ news.thumbnail }}" alt=""></a>
+                         </div>
+                         <div class="list_group_right">
+                             <a href="/news/{{ news.id }}/" target="_blank"><p class="list_header">{{ news.title }}</p></a>
+                             <a href="/news/{{ news.id }}/" target="_blank"><p class="list_detail">{{ news.describe }}</p></a>
+                             <a href="/news/{{ news.id }}/" target="_blank"><span class="news_direction">{{ news.category.name }}</span></a>
+                             <a href="/news/{{ news.id }}/" target="_blank"><span class="author">{{ news.author.username }}</span></a>
+                             <a href="/news/{{ news.id }}/" target="_blank"><span class="timer">{{ news.timer|dateTime }}</span></a>
+                         </div>
+                     </div>
+                 </li>
+    {{ /each }}
+    {% endverbatim %}
+</script>
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <div class="wrapper">
+            <div class="left_news">
+                <div class="carousel_map">
+                    <ul class="carousel_group" id="carousel_ul">
+                        {% for carousel in carousels %}
+                            <li><a href="{{ carousel.link_to }}" target="_blank"><img src="{{ carousel.image_url }}" alt=""></a></li>
+                        {% endfor %}
+                    </ul>
+                    <span class="arrow left_arrow">‹</span>
+                    <span class="arrow right_arrow">›</span>
+                    <div class="carousel_circle">
+                        <ul class="carousel_circle_ul"></ul>
+                    </div>
+                </div>
+                <div class="news_group">
+                    <div class="news_strip">
+                        <div class="news_strip_border"></div>
+                        <span class="activate3" data-category_id="0" ><a href="">最新资讯</a></span>
+                        {% for category in categories %}
+                            <span data-category_id="{{ category.id }}"><a href="javascript: void (0)">{{ category.name }}</a></span>
+                        {% endfor %}
+{#                        <span><a href="#">新消费</a></span>#}
+{#                        <span><a href="#">金融科技</a></span>#}
+{#                        <span><a href="#">出行物流</a></span>#}
+{#                        <span><a href="#">文娱</a></span>#}
+{#                        <span><a href="#">人工智能</a></span>#}
+{#                        <span><a href="#">人物</a></span>#}
+{#                        <span><a href="#">干货</a></span>#}
+{#                        <span><a href="#">其他</a></span>#}
+                    </div>
+                    {% include 'comment/news_list.html' %}
+                    <div class="load_more">
+                        <button id="load-more">加载更多</button>
+                    </div>
+                </div>
+            </div>
+            {% include 'comment/right_news.html' %}
+        </div>
+    </div>
+{% endblock %}

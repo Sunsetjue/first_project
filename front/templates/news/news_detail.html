@@ -1,0 +1,74 @@
+{% extends 'front_base.html' %}
+{% load filter %}
+
+{% block title %}
+    新闻详情
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/news/news_detail.min.css' %}">
+    <script src="{% static 'art-template/template-web.js' %}"></script>
+    <script src="{% static 'js/news_detail.min.js' %}"></script>
+    <script id="comment-src" type="text/html">
+    {% verbatim %}
+        <li>
+            <div class="comment_header">
+                <img src="http://127.0.0.1:8000/static/images/photo.jpg" alt="">
+                <span>{{ comment.author.username }}</span>
+                <span class="timer">{{ comment.pub_time|dateTime }}</span>
+            </div>
+            <p>{{ comment.comment }}</p>
+        </li>
+    {% endverbatim %}
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <div class="wrapper">
+            <div class="left_news">
+                <h3 class="title">{{ news.title}}</h3>
+                <div class="category">
+                    <div class="category_left">
+                        <span>{{ news.author.username }}</span>
+                        <span>{{ news.timer|since_time }}</span>
+                        <span class="background_color">{{ news.category.name }}</span>
+                    </div>
+                    <div class="category_right">
+                        <span>分享至: </span>
+                        <a class="right_weixin"></a>
+                        <a class="right_weibo"></a>
+                    </div>
+                </div>
+                <div class="streamline">
+                    <i class="icon-zhuangshiyongyinhao iconfont"></i>
+                    <div class="streanline_word">{{ news.describe }}</div>
+                </div>
+                <article class="article">
+                    {{ news.content|safe }}
+                </article>
+                <div class="comment">
+                    <h3 class="title">文章评论</h3>
+                    <textarea name="comment" class="comment_textarea login" placeholder="登录参加评论" id="text_area_place"></textarea>
+                    <div class="submit">
+                        <button class="submit_button" data-news-id="{{ news.id }}">立即评论</button>
+                    </div>
+                    <ul class="comment_list">
+                        {% for comment in news.comments.all %}
+                            <li>
+                            <div class="comment_header">
+                                <img src="{% static 'images/photo.jpg' %}" alt="">
+                                <span>{{ comment.author.username }}</span>
+                                <span class="timer">{{ comment.pub_time|since_time }}</span>
+                            </div>
+                            <p>{{ comment.comment }}</p>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+            {% include 'comment/right_news.html' %}
+        </div>
+    </div>
+{% endblock %}

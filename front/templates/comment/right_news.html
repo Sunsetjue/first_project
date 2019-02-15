@@ -1,0 +1,84 @@
+{% load filter %}
+<div class="right_news">
+                <div class="fast_news">
+                    <div class="header2">
+                        <img src="https://www.bufanbiz.com/static/build/images/kuaixun-title-icon.png" alt="">
+                        <a class="header2_right">更多</a>
+                    </div>
+                    <ul class="fast_news_list">
+                        <li>
+                            <div class="fast_news_group">
+                                <div class="fast_news_detail1">百度回应搜“英国脱欧”半数文章出自百家号：属特例</div>
+                                <div class="detail1">此前，刷屏文章《搜索引擎百度已死》举例称，在百度搜索引擎搜索“英国脱欧”，
+                                    第一页会出现7条结果，其中4条全是百家号的文章，1条是百度百科。
+                                    百家号总经理阮瑜今日对此表示，文章所举例子为特例，
+                                    百度搜索出现百家号文章内容的比例是低于一定值的，在内容质量把关方面，
+                                    百度和高校合作，并结合自身技术，对内容有严格的审核。
+                                </div>
+                                <div class="timer">10分钟前</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fast_news_group">
+                                <div class="fast_news_detail2">科大讯飞与奇瑞海外达成战略合作</div>
+                                <div class="detail2">近日，科大讯飞与奇瑞海外在奇瑞国际公司举行战略合作签约仪式。
+                                    双方将以科大讯飞翻译机为切入点，发挥各自优势，
+                                    并利用奇瑞庞大的贸易平台、丰富的海外经验开展更加深度的合作，
+                                    加快加深科大讯飞海外发展的脚步。
+                                </div>
+                                <div class="timer">5分钟前</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="" ><div class="load_more">查看更多</div></a>
+                </div>
+                <div class="hot_article">
+                    <div class="header3">
+                        <span>热门文章</span>
+                    </div>
+                    <ul class="hot_article_list">
+                        {% for news in newses %}
+                            <li>
+                            <div class="article_group">
+                                <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><div class="title">{{ news.title }}</div></a>
+                                <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><div class="hot_point">{{ news.category.name }}</div></a>
+                                <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><div class="timer">{{ news.timer|since_time }}</div></a>
+                            </div>
+                            <div class="article_img">
+                                <a href="{% url 'news:news_detail' news_id=news.id %}" target="_blank"><img src="{{ news.thumbnail }}" alt=""></a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="hot_topic">
+                    <div class="header4">
+                        <span>热门话题</span>
+                    </div>
+                    <div class="hot_topic_group">
+                        <a href=""><p>浏览器</p></a>
+                        <a href=""><p>演变历史</p></a>
+                        <a href=""><p>手机业务</p></a>
+                        <a href=""><p>微软</p></a>
+                        <a href=""><p>乔布斯</p></a>
+                        <a href=""><p>财富</p></a>
+                        <a href=""><p>盈利模式</p></a>
+                        <a href=""><p>外卖平台</p></a>
+                    </div>
+                </div>
+                <div class="attention">
+                    <div class="header5">
+                        <span>关注不凡商业</span>
+                    </div>
+                    <div class="attention_group">
+                        <span class="icon-weixin iconfont"></span>
+                        <a href="" class="weixin">孙彬的微信</a>
+                        <span class="icon-QQ iconfont"></span>
+                        <a href="" class="qq">孙彬的QQ</a>
+                    </div>
+                    <div class="attention_img">
+                        <img src="{% static 'images/add_weixin.png'%}" alt="这是图片" class="left">
+                        <img src="{% static 'images/add_qq.jpg' %}" alt="这是图片" class="right">
+                    </div>
+                </div>
+            </div>

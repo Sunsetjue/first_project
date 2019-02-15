@@ -1,0 +1,27 @@
+{% extends 'front_base.html' %}
+
+{% block title %}
+    搜索
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/other/search.min.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <div class="wrapper">
+            <div class="left_news">
+                <div class="search-banner">
+                    <form action="" method="get">
+                        <input type="text" placeholder="可输入新闻关键词、作者名字搜索" name="p" class="p-input">
+                        <input class="search-for" type="submit" value="搜索">
+                    </form>
+                </div>
+                <div class="hot-recommend">热门推荐</div>
+                {% include 'comment/news_list.html' %}
+            </div>
+            {% include 'comment/right_news.html' %}
+        </div>
+    </div>
+{% endblock %}

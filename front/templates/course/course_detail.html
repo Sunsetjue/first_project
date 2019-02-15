@@ -1,0 +1,173 @@
+{% extends 'front_base.html' %}
+
+{% block title %}
+    课程详情
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/course/course_detail.min.css' %}">
+    <script src="{% static 'videojs/video.min.js' %}"></script>
+    <script src="{% static 'videojs/videojs-contrib-hls.min.js' %}"></script>
+    <script src="{% static 'videojs/videojs-contrib-quality-levels.min.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.bdstatic.com/jwplayer/latest/cyberplayer.js"></script>
+    <script src="{% static 'js/index.min.js' %}"></script>
+    <script src="{% static 'js/course_index.min.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+        <div class="course_nav">
+            <div class="nav_container">
+                <a href="#" class="title">在线课堂</a>
+                <ul class="nav_list" id="course_index_ul">
+                    <li class="activate6"><a href="#">最新课堂</a></li>
+                    <li><a href="#">系列课</a></li>
+                    <li><a href="#">投资人说</a></li>
+                    <li><a href="#">明星案例</a></li>
+                    <li><a href="#">创业知识</a></li>
+                    <li><a href="#">会员专区</a></li>
+                </ul>
+                <div class="bottom">我的课堂</div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="class_detail_wrapper">
+                <div class="banner">
+                    <p>{{ course.title }}</p>
+                    <div class="shall">
+                        <div class="shall_to">分享至：</div>
+                        <div class="shall_picture">
+                            <a href="" class="picture1"></a>
+                            <a href="" class="picture2"></a>
+                        </div>
+                    </div>
+                </div>
+                {% if course.price > 0 %}
+                    <div class="float_buy">
+                        <div class="left">{{ course.title }}</div>
+                        <div class="right">
+                            <a href="{% url 'course:paying_course' course_id=course.pk %}"><button>立即购买</button></a>
+                            <div class="right_price">¥{{ course.price }}</div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="float_buy" style="display: none">
+                        <div class="left">{{ course.title }}</div>
+                        <div class="right">
+                            <button>立即购买</button>
+                            <div class="right_price">¥{{ course.price }}</div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="video">
+                    <span hidden data-video-url="{{ course.video_url }}" data-picture-url="{{ course.picture_url }}" id="video-info"></span>
+                    <div id="player"></div>
+                </div>
+                <div class="class-detail-left">
+                    <div class="bottom_left">
+                    <div class="course_author">
+                        <div class="title">课程讲师</div>
+                        <div class="middle">
+                            <div class="name">{{ course.teacher.name }}</div>
+                            <div class="name_detail">{{ course.teacher.name_title }}</div>
+                        </div>
+                        <div class="detail">{{ course.teacher.profile }}</div>
+                    </div>
+                </div>
+                    <div class="bottom_left">
+                    <div class="course_author">
+                        <div class="title">课程简介</div>
+                        <div class="detail">
+                            {{ course.introduction|safe }}
+                        </div>
+                    </div>
+                </div>
+                    <div class="bottom_left">
+                    <div class="course_author">
+                        <div class="title">课程大纲</div>
+                        <p>一、融资是系统工程</p>
+                        <p>二、成功融资的四个核心点</p>
+                        <p>三、融资计划的实施</p>
+                        <p>四、融资需要注意的点有哪些？</p>
+                    </div>
+                </div>
+                    <div class="bottom_left">
+                    <div class="course_author">
+                        <div class="title">课程信息</div>
+                        <p>课程主题：创业公司如何设计股权结构</p>
+                        <p>上课方式：在线视频学习</p>
+                        <p>课程时长：{{ course.course_time }}秒</p>
+                        {% if course.price > 0 %}
+                            <p>收费：{{ course.price }}元</p>
+                            <p>时间：付费后可随时观看</p>
+                        {% else %}
+                            <p>收费：免费</p>
+                            <p>时间：可随时观看</p>
+                        {% endif %}
+                    </div>
+                </div>
+                    <div class="bottom_left">
+                    <div class="course_author">
+                        <div class="title">适宜人群</div>
+                        <div class="detail">
+                            初创公司创始人及需要融资的创业者
+                        </div>
+                    </div>
+                </div>
+                    <div class="bottom_left">
+                    <div class="course_author">
+                        <div class="title">帮助中心</div>
+                        <p>1. 购买后的课程在线可反复观看学习，视频有效期以具体课程信息为准。 </p>
+                        <p>2. 课程暂不支持下载观看，均为在线观看视频。</p>
+                        <p>3. 课程一经购买，不可转让、不可退款；仅限购买账号观看。 </p>
+                        <p>4. 如有问题请咨询客服饭桌君： 电话：15504975049 微信：Sunsetjue </p>
+                    </div>
+                </div>
+                    <div class="bottom_left">
+                    <div class="course_author">
+                        <div class="title">关于不凡商学院在线课堂</div>
+                        <div class="detail">
+                            不凡商学院在线课堂是不凡商业旗下的线上视频课程产品，汇聚顶级创业大咖导师、行业资深专家，致力于用系统、垂直的知识体系让创业者认知升级、技能进阶。不凡商学院在线课堂用知识陪伴创业者从平凡到卓越！
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="float_buy2">
+                    <div class="left">{{ course.title }}</div>
+                    <div class="right">
+                        <button>立即购买</button>
+                        <div class="right_price">¥{{ course.price }}</div>
+                    </div>
+                </div>
+                <div class="bottom_right">
+                    <div class="recommand">
+                        <p>推荐课程</p>
+                    </div>
+                    <ul class="course-list">
+                        <li>
+                            <a href="#">
+                                <div class="top">顶级投资人眼中的创业成功规则</div>
+                                <div class="bottom">戴汨/愉悦资本创始合伙人</div>
+                                <div class="img"><img src="https://static-image.xfz.cn/1499741922_294.jpg-course.list.small" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="top">创业中如何进行风险管理</div>
+                                <div class="bottom">贺伊韩/未来法律CEO</div>
+                                <div class="img"><img src="https://static-image.xfz.cn/1497870564_403.jpg-course.list.small" alt=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="top">从尽职调查看融资中那些法律的坑</div>
+                                <div class="bottom">王益为/未来法律联合创始人</div>
+                                <div class="img"><img src="https://static-image.xfz.cn/1493810407_709.jpg-course.list.small" alt=""></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
