@@ -76,7 +76,7 @@
           <entry key="html" value="19530" />
           <entry key="js" value="24509" />
           <entry key="json" value="12" />
-          <entry key="py" value="20351" />
+          <entry key="py" value="20392" />
           <entry key="py@DjangoProject" value="39" />
           <entry key="scss" value="15390" />
         </counts>
@@ -89,7 +89,7 @@
           <entry key="JSON" value="12" />
           <entry key="JavaScript" value="24509" />
           <entry key="PLAIN_TEXT" value="36" />
-          <entry key="Python" value="20351" />
+          <entry key="Python" value="20392" />
           <entry key="SCSS" value="15390" />
         </counts>
       </usages-collector>
@@ -168,8 +168,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DjangoProject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="415">
+              <caret line="172" column="50" lean-forward="true" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -860,15 +860,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/front_base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -879,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DjangoProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="415">
+          <caret line="172" column="50" lean-forward="true" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="50" />
         </state>
       </provider>
     </entry>
