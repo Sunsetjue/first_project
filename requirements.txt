@@ -1,7 +1,7 @@
 bleach==3.1.0
 certifi==2018.11.29
 chardet==3.0.4
-Django==2.0
+Django==2.2.13
 django-debug-toolbar==1.11
 django-shortuuidfield==0.1.3
 djangorestframework==3.9.1
